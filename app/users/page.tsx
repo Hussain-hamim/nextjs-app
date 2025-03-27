@@ -8,7 +8,7 @@ interface User {
 
 const UsersPage = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const users: User[] = await res.json();
+  const users: User[] = await res.json(); // we do not need state management here because this is rending on the server side
 
   return (
     <div>
