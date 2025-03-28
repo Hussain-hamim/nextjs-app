@@ -9,10 +9,10 @@ interface User {
 }
 
 interface Props {
-  sortOder: string;
+  sortOrder: string;
 }
 
-const UserTable = async ({ sortOder }: Props) => {
+const UserTable = async ({ sortOrder }: Props) => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users', {
     // cache: 'no-store', // we make the data dynamic by not caching it, we want to fetch the data every time
     next: { revalidate: 200 }, // by default fetch is static data or unchanging data
@@ -20,7 +20,7 @@ const UserTable = async ({ sortOder }: Props) => {
   const users: User[] = await res.json(); // we do not need state management here because this is rending on the server side
 
   const sortedUsers = sort(users).asc(
-    sortOder === 'email' ? (user) => user.email : (user) => user.name
+    sortOrder === 'email' ? (user) => user.email : (user) => user.name
   );
 
   return (
