@@ -3,7 +3,7 @@ import AddToCart from './AddToCart';
 
 const ProductCard = () => {
   return (
-    <div className='btn btn-secondary'>
+    <div className='btn btn-secondary hover:bg-rose-400'>
       <div>ProductCard</div>
       <AddToCart />
     </div>
