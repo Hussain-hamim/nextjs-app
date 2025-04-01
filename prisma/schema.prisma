@@ -13,6 +13,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+//A tool that allows you to interact with a database 
+//using code instead of SQL
+
+/* whats prisma?
+Prisma is an ORM (Object-Relational Mapper) that makes it easier
+ to work with databases in JavaScript and TypeScript. Instead of 
+ writing raw SQL, you use Prisma Client, which generates SQL for you.
+*/
+
 model User {
   id        Int     @id @default(autoincrement())
   email     String  @unique
