@@ -16,16 +16,22 @@ datasource db {
 //A tool that allows you to interact with a database 
 //using code instead of SQL
 
-/* whats prisma?
-Prisma is an ORM (Object-Relational Mapper) that makes it easier
- to work with databases in JavaScript and TypeScript. Instead of 
- writing raw SQL, you use Prisma Client, which generates SQL for you.
-*/
+/**
+ * whats prisma?
+ * Prisma is an ORM (Object-Relational Mapper) that makes it easier
+ * to work with databases in JavaScript and TypeScript. Instead of
+ * writing raw SQL, you use Prisma Client, which generates SQL for you.
+ */
 
 model User {
-  id        Int     @id @default(autoincrement())
-  email     String  @unique
-  name      String
-  followers Int     @default(0)
-  isActive  Boolean @default(true)
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String
+  followers    Int      @default(0)
+  isActive     Boolean  @default(true)
+  registeredAt DateTime @default(now())
+  // posts     Post[]
+  // comments  Comment[]
+  // profile   Profile?
+  //// A user can have multiple posts, comments, and a profile
 }
