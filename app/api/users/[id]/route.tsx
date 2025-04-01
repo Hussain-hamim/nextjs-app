@@ -27,5 +27,5 @@ export async function DELETE(request: NextRequest, { params }: Props) {
   if (params.id > 10)
     return NextResponse.json({ error: 'user not found' }, { status: 404 });
 
-  return NextResponse.json({});
+  return NextResponse.json({}); // delete user
 }
