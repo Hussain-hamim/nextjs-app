@@ -17,11 +17,11 @@ const UploadPage = () => {
       <CldUploadWidget
         uploadPreset='upload-files'
         onSuccess={(result) => {
-          console.log(result);
           if (result.event !== 'success') return;
           const info = result.info as CldUploadResult;
           setPublicId(info.public_id);
         }}
+        options={{ sources: ['local'], multiple: false, maxFiles: 5 }}
       >
         {({ open }) => (
           <button onClick={() => open?.()} className='btn btn-primary'>
