@@ -3,9 +3,20 @@ import schema from './schema';
 import { prisma } from '@/prisma/client';
 
 export async function GET(request: NextRequest) {
-  const users = await prisma.user.findMany();
+  // const users = await prisma.user.findMany();
 
-  return NextResponse.json(users, { status: 200 });
+  const data = [
+    {
+      id: 1,
+      name: 'hamim',
+    },
+    {
+      id: 2,
+      name: 'hussain',
+    },
+  ];
+
+  return NextResponse.json(data, { status: 200 });
 }
 
 export async function POST(request: NextRequest) {
