@@ -12,6 +12,7 @@
   "dependencies": {
     "@prisma/client": "^6.5.0",
     "fast-sort": "^3.4.1",
+    "lucide-react": "^0.487.0",
     "next": "15.2.4",
     "next-auth": "^4.24.11",
     "next-cloudinary": "^6.16.0",

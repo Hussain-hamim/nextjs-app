@@ -1,4 +1,5 @@
 'use client';
+import { CircleUserRound } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react';
@@ -17,7 +18,15 @@ const NavBar = () => {
         Users
       </Link>
       <Link href='/admin'>Admin</Link>
-      {status === 'authenticated' && <div>{session.user?.name}</div>}
+      {status === 'authenticated' && (
+        <div>
+          <CircleUserRound
+            size={24}
+            className='text-gray-600 inline mr-1 mb-1'
+          />
+          {session.user?.name}
+        </div>
+      )}
       {status === 'unauthenticated' && (
         <Link href='/api/auth/signin'>Login</Link>
       )}
