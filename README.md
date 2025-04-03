@@ -2,6 +2,24 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+## Important!!
+
+----- replace your keys in .env
+
+DATABASE_URL="<dbname>://<username>:<password>@localhost:<dbport>/<DBname>" // db here we used mysql
+
+NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=
+
+NEXTAUTH_URL=http://localhost:3000
+
+NEXTAUTH_SECRET=
+
+GOOGLE_CLIENT_ID=
+
+GOOGLE_CLIENT_SECRET=
+
+---
+
 First, run the development server:
 
 ```bash
