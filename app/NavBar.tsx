@@ -20,6 +20,9 @@ const NavBar = () => {
       <Link className='link-hover' href='/admin'>
         Admin
       </Link>
+      <Link className='link-hover' href='/upload'>
+        Upload
+      </Link>
       {status === 'authenticated' && (
         <div>
           <CircleUserRound
