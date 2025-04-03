@@ -11,13 +11,15 @@ const NavBar = () => {
 
   return (
     <div className='flex bg-slate-200 text-gray-600 p-5 mb-2 space-x-3'>
-      <Link className='mr-5' href='/'>
+      <Link className='mr-5 link-hover' href='/'>
         Next.js
       </Link>
-      <Link className='mr-5' href='/users'>
+      <Link className='mr-5 link-hover' href='/users'>
         Users
       </Link>
-      <Link href='/admin'>Admin</Link>
+      <Link className='link-hover' href='/admin'>
+        Admin
+      </Link>
       {status === 'authenticated' && (
         <div>
           <CircleUserRound
@@ -25,6 +27,9 @@ const NavBar = () => {
             className='text-gray-600 inline mr-1 mb-1'
           />
           {session.user?.name}
+          <Link className='ml-3 link-hover' href='/api/auth/signout'>
+            Sign Out
+          </Link>
         </div>
       )}
       {status === 'unauthenticated' && (
