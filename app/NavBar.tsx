@@ -11,7 +11,7 @@ const NavBar = () => {
 
   return (
     <div className='flex justify-between bg-slate-200 text-gray-600 p-5 mb-2'>
-      <div className='space-x-5'>
+      <div className='space-x-3'>
         <Link className=' link-hover' href='/'>
           Next.js
         </Link>
@@ -26,7 +26,7 @@ const NavBar = () => {
         </Link>
       </div>
 
-      <div className='space-x-3 '>
+      <div className='space-x-2 '>
         {status === 'authenticated' && (
           <div>
             <CircleUserRound
