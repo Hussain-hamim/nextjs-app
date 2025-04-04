@@ -22,33 +22,29 @@ export const authOptions: AuthOptions = {
         if (!credentials?.email || !credentials.password) return null;
         console.log('hashed: ', await bcrypt.hash(credentials.password, 10));
 
-        // const user = await prisma.user.findUnique({
-        //   where: { email: credentials.email },
-        // });
+        const user = await prisma.user.findUnique({
+          where: { email: credentials.email },
+        });
 
-        // if (!user) return null;
+        if (!user) return null;
 
-        // const passwordMatched = await bcrypt.compare(
-        //   credentials.password,
-        //   user.hashedPassword!
-        // );
+        const passwordMatched = await bcrypt.compare(
+          credentials.password,
+          user.hashedPassword!
+        );
 
-        // return passwordMatched ? user : null;
+        return passwordMatched ? user : null;
 
-        const customUser = {
-          id: 2,
-          name: credentials.email,
-          email: credentials.email,
-          email_verified: Date.now(),
-          image: 'https://www.w3schools.com/howto/img_avatar.png',
-          hashedPassword: credentials.password,
-        };
+        // const customUser = {
+        //   id: 2,
+        //   name: credentials.email,
+        //   email: credentials.email,
+        //   email_verified: Date.now(),
+        //   image: 'https://www.w3schools.com/howto/img_avatar.png',
+        //   hashedPassword: credentials.password,
+        // };
 
-        // await prisma.user.create({
-        //   data: customUser,
-        // });
-
-        return customUser;
+        // return customUser;
       },
     }),
     GoogleProvider({
