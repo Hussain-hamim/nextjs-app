@@ -26,7 +26,7 @@ const NavBar = () => {
         </Link>
       </div>
 
-      <div>
+      <div className='space-x-3 '>
         {status === 'authenticated' && (
           <div>
             <CircleUserRound
@@ -41,8 +41,12 @@ const NavBar = () => {
         )}
         {status === 'unauthenticated' && (
           <>
-            <Link href='/api/auth/signin'>Login</Link>
-            <Link href='/auth/register'>Register</Link>
+            <Link href='/api/auth/signin' className='link-hover'>
+              Login
+            </Link>
+            <Link href='/auth/register' className='link-hover'>
+              Register
+            </Link>
           </>
         )}
       </div>

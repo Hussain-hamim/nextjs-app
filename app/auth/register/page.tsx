@@ -1,6 +1,7 @@
 'use client';
 
 import { signIn } from 'next-auth/react';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Register() {
@@ -65,6 +66,9 @@ export default function Register() {
         <button className='btn ' type='submit'>
           Register
         </button>
+        <Link href='/api/auth/signin' className='link-hover font-bold'>
+          Already have an account? Login
+        </Link>
       </form>
     </div>
   );
