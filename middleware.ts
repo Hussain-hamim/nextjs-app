@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+// import { NextRequest, NextResponse } from 'next/server';
 
 // import middleware from 'next-auth/middleware';
 export { default } from 'next-auth/middleware'; // this redirect to login page

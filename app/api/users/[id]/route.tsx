@@ -1,14 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import schema from '../schema';
 import { prisma } from '@/prisma/client';
+import schema from '../schema';
 
 interface Props {
-  params: { id: number };
+  params: { id: string };
 }
 
-export async function GET(request: NextRequest, { params }: Props) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
   const user = await prisma.user.findUnique({
-    where: { id: Number(params.id) },
+    where: { id: params.id },
   });
 
   if (!user) {
@@ -27,7 +30,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
     return NextResponse.json(validation.error.errors, { status: 404 });
 
   const user = await prisma.user.findUnique({
-    where: { id: Number(params.id) },
+    where: { id: params.id },
   });
 
   if (!user)
@@ -46,7 +49,7 @@ export async function PUT(request: NextRequest, { params }: Props) {
 
 export async function DELETE(request: NextRequest, { params }: Props) {
   const user = await prisma.user.findUnique({
-    where: { id: Number(params.id) },
+    where: { id: params.id },
   });
 
   if (!user)

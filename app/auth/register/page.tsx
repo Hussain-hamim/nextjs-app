@@ -20,7 +20,7 @@ export default function Register() {
 
     if (res.ok) {
       // ✅ Auto login the user after successful registration
-      const result = await signIn('credentials', {
+      await signIn('credentials', {
         redirect: true,
         name,
         email,
