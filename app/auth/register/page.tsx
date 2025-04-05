@@ -2,15 +2,15 @@
 
 import { signIn } from 'next-auth/react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const submitHandler = async (e) => {
-    e.preventDefault();
+  const submitHandler = async (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
 
     const res = await fetch('/api/register', {
       method: 'POST',

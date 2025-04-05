@@ -1,16 +1,14 @@
 import React from 'react';
 
-interface Props {
-  params: { id: number; photoId: number };
-}
+// interface Props {
+//   params: { id: number; photoId: number };
+// }
 
-const PhotoPage = ({ params: { id, photoId } }: Props) => {
+const PhotoPage = () => {
   return (
     <>
       <div>UserDetailPage</div>
-      <div>
-        id: {id} photoId {photoId}
-      </div>
+      <div>{/* id: {id} photoId {photoId} */}</div>
     </>
   );
 };

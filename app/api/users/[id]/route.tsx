@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/prisma/client';
+// import { prisma } from '@/prisma/client';
 // import schema from '../schema';
 
 // interface Props {
@@ -7,17 +7,25 @@ import { prisma } from '@/prisma/client';
 // }
 
 export async function GET(
-  request: NextRequest,
-  context: { params: { id: string } } // Ensure the type matches Next.js expectations
+  request: NextRequest
+  // context: { params: { id: number } } // Ensure the type matches Next.js expectations
 ) {
-  const { params } = context; // Destructure params from context
-  const user = await prisma.user.findUnique({
-    where: { id: params.id },
-  });
+  // const { params } = context; // Destructure params from context
+  // const user = await prisma.user.findUnique({
+  //   where: { id: params.id },
+  // });
 
-  if (!user) {
-    return NextResponse.json({ error: 'User not found' }, { status: 404 });
-  }
+  console.log(request);
+  const user = {
+    id: 1,
+    name: 'hussain',
+    email: 'hussain@dev.com',
+    hashedPassword: 'hashedPassword',
+  };
+
+  // if (!user) {
+  //   return NextResponse.json({ error: 'User not found' }, { status: 404 });
+  // }
 
   return NextResponse.json(user, { status: 200 });
 }

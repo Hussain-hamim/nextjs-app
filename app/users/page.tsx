@@ -2,11 +2,11 @@ import React, { Suspense } from 'react';
 import UserTable from './UserTable';
 import Link from 'next/link';
 
-interface Props {
-  searchParams: { sortOrder: string };
-}
+// interface Props {
+//   searchParams: { sortOrder: string };
+// }
 
-const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
+const UsersPage = async () => {
   return (
     <div>
       <h1>Users</h1>
@@ -14,7 +14,7 @@ const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
         New User
       </Link>
       <Suspense fallback={<p>Loading...</p>}>
-        <UserTable sortOrder={sortOrder} />
+        <UserTable sortOrder={'name'} />
       </Suspense>
     </div>
   );
