@@ -12,5 +12,5 @@ export const config = {
   // *: zero or more
   // +: one or more
   // ?: zero or more
-  matcher: ['/users/:id*', '/admin'], // protected routes
+  matcher: ['/admin'], // protected routes
 };
